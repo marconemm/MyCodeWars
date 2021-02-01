@@ -40,3 +40,10 @@ const firstNonConsecutive = arr => {
 
     return result;
 };
+
+/** Solving the kata "FIXME: Replace all dots" on:
+ https://www.codewars.com/kata/596c6eb85b0f515834000049/train/javascript  */
+
+// added the "\" to escape special characters and "g" to replace all occurences in the string
+const replaceDots = str =>
+    str.replace(/[.]/g, '-');
