@@ -30,3 +30,10 @@ const whatNote = (string, fret) => {
     // Return the selected note:
     return guitarFretList[i][fret];
 };
+
+/**Solving the kata "Holiday III - Fire on the boat" on:
+https://www.codewars.com/kata/57e8fba2f11c647abc000944/train/javascript*/
+
+// REGEX: /Fire/ => matches character combinations in strings when "Fire" occurs; and
+// REGEX: g => Global search (search into all string content).
+const fireFight = s => s.replace(/Fire/g, "~~");
