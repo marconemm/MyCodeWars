@@ -62,3 +62,18 @@ const positiveSum = arr => arr.reduce((acc, number) => {
  https://www.codewars.com/kata/57cc975ed542d3148f00015b/train/javascript  */
 
 const check = (a, x) => a.includes(x);
+
+/** Kata "Is it a rainbow?" on:
+ https://www.codewars.com/kata/59e7202ffc3c4952940000a9/train/javascript  */
+
+const sortRainbow = colour => {
+    const rainbowColors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+
+    if (colour.toString() == rainbowColors.toString())
+        return true;
+
+    return false;
+    
+    //Solução Alternativa:
+    // return rainbowColors.every((color, i) => colour[i] === color);
+}
