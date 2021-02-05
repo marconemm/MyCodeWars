@@ -73,7 +73,22 @@ const sortRainbow = colour => {
         return true;
 
     return false;
-    
+
     //Solução Alternativa:
     // return rainbowColors.every((color, i) => colour[i] === color);
 }
+
+/** Kata "How good are you really?" on:
+ https://www.codewars.com/kata/5601409514fc93442500010b/train/javascript  */
+
+const betterThanAverage = (classPoints, yourPoints) => {
+    const totalClassPoints = classPoints.reduce((acc, grade) => acc += grade);
+    const classAverage = totalClassPoints / classPoints.length;
+    const amIbetter = yourPoints > classAverage;
+
+    if (amIbetter)
+        return true;
+
+    return false;
+}
+
