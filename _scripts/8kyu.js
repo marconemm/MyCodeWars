@@ -58,7 +58,7 @@ const positiveSum = arr => arr.reduce((acc, number) => {
     return acc;
 }, 0);
 
-/** Solving the kata "You only need one - Beginner" on:
+/** Kata "You only need one - Beginner" on:
  https://www.codewars.com/kata/57cc975ed542d3148f00015b/train/javascript  */
 
- 
+const check = (a, x) => a.includes(x);
