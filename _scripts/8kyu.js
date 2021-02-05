@@ -47,3 +47,18 @@ const firstNonConsecutive = arr => {
 // added the "\" to escape special characters and "g" to replace all occurences in the string
 const replaceDots = str =>
     str.replace(/[.]/g, '-');
+
+/** Solving the kata "Sum of positive" on:
+ https://www.codewars.com/kata/5715eaedb436cf5606000381/train/javascript  */
+
+const positiveSum = arr => arr.reduce((acc, number) => {
+    if (number > 0)
+        acc += number;
+
+    return acc;
+}, 0);
+
+/** Solving the kata "You only need one - Beginner" on:
+ https://www.codewars.com/kata/57cc975ed542d3148f00015b/train/javascript  */
+
+ 
