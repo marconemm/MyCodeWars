@@ -92,3 +92,27 @@ const betterThanAverage = (classPoints, yourPoints) => {
     return false;
 }
 
+
+/** Kata "Beginner Series #2 Clock" on:
+ https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a/train/javascript  */
+
+const past = (h, m, s) => {
+    
+    let total = 0;
+
+    if (h !== 0)
+        total += (h * 3600000);
+
+    if (m !== 0)
+        total += (m * 60000);
+
+    if (s !== 0)
+        total += (s * 1000);
+
+    return total;
+}
+
+/** Kata "Is it a palindrome?" on:
+ https://www.codewars.com/kata/57a1fd2ce298a731b20006a4/train/javascript  */
+
+
