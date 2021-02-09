@@ -52,3 +52,10 @@ const ensureEven = n => {
 
     return n;
 }
+
+/**Kata "All Star Code Challenge #3" on:
+https://www.codewars.com/kata/58640340b3a675d9a70000b9/train/javascript*/
+
+
+// REGEX to find only the vowels: /[aeiou]/g
+const removeVowels = str => str.replace(/[aeiou]/g,"");
