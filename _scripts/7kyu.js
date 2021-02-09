@@ -1,4 +1,4 @@
-/*Solving the kata "Figure Out the Notes" on:
+/*Kata "Figure Out the Notes" on:
  https://www.codewars.com/kata/5602e85d255e3240c2000024/train/javascript */
 
 const whatNote = (string, fret) => {
@@ -31,9 +31,24 @@ const whatNote = (string, fret) => {
     return guitarFretList[i][fret];
 };
 
-/**Solving the kata "Holiday III - Fire on the boat" on:
+/**Kata "Holiday III - Fire on the boat" on:
 https://www.codewars.com/kata/57e8fba2f11c647abc000944/train/javascript*/
 
 // REGEX: /Fire/ => matches character combinations in strings when "Fire" occurs; and
 // REGEX: g => Global search (search into all string content).
 const fireFight = s => s.replace(/Fire/g, "~~");
+
+/**Kata "Everything Is Even" on:
+https://www.codewars.com/kata/59c0cdbd5fb133c82b00007d/train/javascript*/
+
+const ensureEven = n => {
+    n = Math.round(n);
+
+    if (n > 0 && n % 2 !== 0)
+        n += 1;
+
+    if (n < 0)
+        n -= 1;
+
+    return n;
+}
