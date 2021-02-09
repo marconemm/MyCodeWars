@@ -122,4 +122,13 @@ const isPalindrome = str => {
     return (str === strReverse) ? true : false;
 }
 
+/** Kata "SpeedCode #2 - Array Madness" on:
+ https://www.codewars.com/kata/56ff6a70e1a63ccdfa0001b1/train/javascript  */
 
+const arrayMadness = (arr1, arr2) => {
+
+    const squareSumArr1 = arr1.reduce((acc, number) => acc += number ** 2, 0);
+    const cubesSumArr2 = arr2.reduce((acc, number) => acc += number ** 3, 0);
+
+    return (squareSumArr1 > cubesSumArr2) ? true : false;
+}
