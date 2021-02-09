@@ -97,7 +97,7 @@ const betterThanAverage = (classPoints, yourPoints) => {
  https://www.codewars.com/kata/55f9bca8ecaa9eac7100004a/train/javascript  */
 
 const past = (h, m, s) => {
-    
+
     let total = 0;
 
     if (h !== 0)
@@ -114,5 +114,12 @@ const past = (h, m, s) => {
 
 /** Kata "Is it a palindrome?" on:
  https://www.codewars.com/kata/57a1fd2ce298a731b20006a4/train/javascript  */
+
+const isPalindrome = str => {
+    str = str.toLowerCase();
+    const strReverse = str.split("").reverse().join("");
+
+    return (str === strReverse) ? true : false;
+}
 
 
