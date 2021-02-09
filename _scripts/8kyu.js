@@ -145,3 +145,13 @@ const points = games => games.reduce((points, game) => {
 
     return points;
 }, 0);
+
+/** Kata "Array plus array" on:
+ https://www.codewars.com/kata/5a2be17aee1aaefe2a000151/train/javascript  */
+
+ const arrayPlusArray = (arr1, arr2) => {
+    const sumArr1 = arr1.reduce((sum, value) => sum += value);
+    const sumArr2 = arr2.reduce((sum, value) => sum += value);
+
+    return sumArr1 + sumArr2;
+  }
