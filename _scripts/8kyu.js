@@ -132,3 +132,16 @@ const arrayMadness = (arr1, arr2) => {
 
     return (squareSumArr1 > cubesSumArr2) ? true : false;
 }
+
+/** Kata "Total amount of points" on:
+ https://www.codewars.com/kata/5bb904724c47249b10000131/train/javascript  */
+
+const points = games => games.reduce((points, game) => {
+
+    if (game[0] === game[2])
+        points += 1;
+    else if (game[0] > game[2])
+        points += 3;
+
+    return points;
+}, 0);
