@@ -1,4 +1,4 @@
-/*Solving the kata "Categorize New Member" on:
+/*Kata "Categorize New Member" on:
  https://www.codewars.com/kata/5502c9e7b3216ec63c0001aa/train/javascript */
 
 // first solution, usin ".reduce":
@@ -11,18 +11,18 @@ function openOrSenior(data) {
     return data.map(([age, handicap]) => (age > 54 && handicap > 7) ? 'Senior' : 'Open');
 }
 
-/* Solving the kata "A square of squares" on:
+/* Kata "A square of squares" on:
 https://www.codewars.com/kata/54c27a33fb7da0db0100040e/train/javascript */
 
 const isSquare = n => Number.isInteger(Math.sqrt(n))
 
 
-/* Solving the kata "Difference of Volumes of Cuboids" on:
+/* Kata "Difference of Volumes of Cuboids" on:
 https://www.codewars.com/kata/58cb43f4256836ed95000f97/train/javascript */
 
 const findDifference = (a, b) => Math.abs(a.reduce((acc, side) => acc * side) - b.reduce((acc, side) => acc * side))
 
-/* Solving the kata "Find the first non-consecutive number" on:
+/* Kata "Find the first non-consecutive number" on:
 https://www.codewars.com/kata/58f8a3a27a5c28d92e000144/train/javascript */
 
 const firstNonConsecutive = arr => {
@@ -41,14 +41,14 @@ const firstNonConsecutive = arr => {
     return result;
 };
 
-/** Solving the kata "FIXME: Replace all dots" on:
+/** Kata "FIXME: Replace all dots" on:
  https://www.codewars.com/kata/596c6eb85b0f515834000049/train/javascript  */
 
 // added the "\" to escape special characters and "g" to replace all occurences in the string
 const replaceDots = str =>
     str.replace(/[.]/g, '-');
 
-/** Solving the kata "Sum of positive" on:
+/** Kata "Sum of positive" on:
  https://www.codewars.com/kata/5715eaedb436cf5606000381/train/javascript  */
 
 const positiveSum = arr => arr.reduce((acc, number) => {
@@ -149,9 +149,33 @@ const points = games => games.reduce((points, game) => {
 /** Kata "Array plus array" on:
  https://www.codewars.com/kata/5a2be17aee1aaefe2a000151/train/javascript  */
 
- const arrayPlusArray = (arr1, arr2) => {
+const arrayPlusArray = (arr1, arr2) => {
     const sumArr1 = arr1.reduce((sum, value) => sum += value);
     const sumArr2 = arr2.reduce((sum, value) => sum += value);
 
     return sumArr1 + sumArr2;
-  }
+}
+
+/** Kata "Grasshopper - Grade book" on:
+https://www.codewars.com/kata/55cbd4ba903825f7970000f5/train/javascript  */
+
+const getGrade = (s1, s2, s3) => {
+    const score = (s1 + s2 + s3) / 3;
+
+    if (score >= 90)
+        return 'A';
+    else if (score >= 80)
+        return 'B';
+    else if (score >= 70)
+        return 'C';
+    else if (score >= 60)
+        return 'D';
+
+    return 'F';
+
+}
+
+
+
+
+
