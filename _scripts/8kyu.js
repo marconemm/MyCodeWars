@@ -221,3 +221,14 @@ const greet = greetLanguage => {
     return languages[greetLanguage];
 }
 
+/** Kata "Triple Trouble" on:
+https://www.codewars.com/kata/5704aea738428f4d30000914/train/javascript  */
+
+const tripleTrouble = (one, two, three) => {
+
+    let resultStr = "";
+    for (let i = 0; i < one.length; i++)
+        resultStr += `${one[i]}${two[i]}${three[i]}`;
+
+    return resultStr
+}
