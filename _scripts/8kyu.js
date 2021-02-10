@@ -175,7 +175,18 @@ const getGrade = (s1, s2, s3) => {
 
 }
 
+/** Kata "Crash Override" on:
+https://www.codewars.com/kata/578c1e2edaa01a9a02000b7f/train/javascript  */
 
+const aliasGen = (name, surName) => {
+    const REGEX = /[0-9]/; // to find only numbers 0 to 9.
+    const nameFirstLetter = name.charAt(0).toUpperCase();
+    const surNameFirstLetter = surName.charAt(0).toUpperCase();
+    const isNumeric = nameFirstLetter.match(REGEX) || surNameFirstLetter.match(REGEX); // returns "null" case doesn't match with "REGEX".
 
+    if (isNumeric !== null)
+        return "Your name must start with a letter from A - Z.";
 
+    return `${firstName[nameFirstLetter]} ${surname[surNameFirstLetter]}`;
 
+}
