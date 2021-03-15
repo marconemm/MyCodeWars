@@ -232,3 +232,9 @@ const tripleTrouble = (one, two, three) => {
 
     return resultStr
 }
+
+
+/**Kata "Regular Ball Super Ball" on:
+https://www.codewars.com/kata/53f0f358b9cb376eca001079/train/javascript */
+
+const Ball = (ballType) => this.ballType = ballType || "regular";

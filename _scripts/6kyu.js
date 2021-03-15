@@ -21,3 +21,4 @@ const isPrime = number => {
     return true; // If INS'T possible the previous division, "number" is a prime numbe.
 }
 
+

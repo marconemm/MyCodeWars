@@ -57,16 +57,16 @@ const ensureEven = n => {
 https://www.codewars.com/kata/58640340b3a675d9a70000b9/train/javascript*/
 
 // REGEX to find only the vowels: /[aeiou]/g
-const removeVowels = str => str.replace(/[aeiou]/g,"");
+const removeVowels = str => str.replace(/[aeiou]/g, "");
 
 //Solução alternativa:
 // const removeVowels = string => {
-  
+
 //     for (let i = 0; i < string.length; i++){
 //       const char = string[i];
 //       let firstPart;
 //       let secondPart;
-      
+
 //       if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u"){
 //         firstPart = string.slice(0,i);
 //         secondPart = string.slice(i+1);
@@ -74,8 +74,42 @@ const removeVowels = str => str.replace(/[aeiou]/g,"");
 //         i--;
 //       } 
 //     }
-    
+
 //     return string;
 //   }
 
 //   console.log(removeVowels("drake"));
+
+
+/**Kata "The Office II - Boredom Score" on:
+https://www.codewars.com/kata/57ed4cef7b45ef8774000014/train/javascript */
+
+const boredom = team => {
+
+    let score = 0;
+
+    for (let staff in team) {
+
+        if (team[staff] === 'accounts')
+            score++;
+        else if (team[staff] === 'finance')
+            score += 2;
+        else if (team[staff] === 'canteen')
+            score += 10;
+        else if (team[staff] === 'regulation')
+            score += 3;
+        else if (team[staff] === 'trading' || team[staff] === 'change')
+            score += 6;
+        else if (team[staff] === 'IS')
+            score += 8;
+        else if (team[staff] === 'retail')
+            score += 5;
+        else if (team[staff] === 'cleaning')
+            score += 4;
+        else if (team[staff] === 'pissing about')
+            score += 25;
+    }
+
+    return (score <= 80) ? 'kill me now' : (score < 100) ? 'i can handle this': 'party time!!';
+}
+
