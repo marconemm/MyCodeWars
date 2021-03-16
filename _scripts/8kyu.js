@@ -238,3 +238,8 @@ const tripleTrouble = (one, two, three) => {
 https://www.codewars.com/kata/53f0f358b9cb376eca001079/train/javascript */
 
 const Ball = (ballType) => this.ballType = ballType || "regular";
+
+/**Kata "You only need one - Beginner" on:
+https://www.codewars.com/kata/57cc975ed542d3148f00015b/train/javascript */
+
+const check = (array, value) => array.includes(value);

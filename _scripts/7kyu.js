@@ -110,6 +110,57 @@ const boredom = team => {
             score += 25;
     }
 
-    return (score <= 80) ? 'kill me now' : (score < 100) ? 'i can handle this': 'party time!!';
+    return (score <= 80) ? 'kill me now' : (score < 100) ? 'i can handle this' : 'party time!!';
 }
 
+
+/**Kata "Get the Middle Character" on:
+https://www.codewars.com/kata/56747fd5cb988479af000028/train/javascript */
+
+const getMiddle = str => {
+
+    if (str.length === 1)
+        return str;
+
+    const isEven = (str.length % 2 === 0);
+    str = str.split("");
+
+    if (isEven)
+        do {
+            str.pop();
+            str.shift();
+        } while (str.length > 2)
+    else
+        do {
+            str.pop();
+            str.shift();
+        } while (str.length > 1)
+
+    return str.join("");
+}; //getMiddle(str)
+
+
+/**Kata "Monkey Tennis - The Aftermath" on:
+https://www.codewars.com/kata/5a0c5b3206d5b696940000b8/train/javascript */
+
+const ballCollector = detritus => {
+
+    const ballsWeigth = detritus.reduce((acc, detrit) => {
+        if (detrit === 58)
+            acc += detrit;
+
+        return acc;
+    }, 0);
+
+    return { weight: ballsWeigth };
+}
+
+/**Kata "Add property to every object in array" on:
+https://www.codewars.com/kata/54e8c3e89e2ae6f4900005a1/train/javascript */
+
+// questions = questions.map(question => question.usersAnswer = null);
+questions = questions.map(({ question, options, rightAns, numAttempts }) => {
+    const newQuestion = {question:question, options:options, rightAns:rightAns, numAttempts:numAttempts, usersAnswer: null};
+
+    return newQuestion;
+});
