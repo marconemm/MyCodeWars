@@ -242,4 +242,32 @@ const Ball = (ballType) => this.ballType = ballType || "regular";
 /**Kata "You only need one - Beginner" on:
 https://www.codewars.com/kata/57cc975ed542d3148f00015b/train/javascript */
 
-const check = (array, value) => array.includes(value);
+// const check = (array, value) => array.includes(value);
+
+/**Kata "Filling an array (part 1)" on:
+https://www.codewars.com/kata/571d42206414b103dc0006a1/train/javascript */
+
+const arr = maxLength => {
+    const result = [];
+    let length = result.length;
+
+    while (length < (maxLength))
+        length = result.push(length)
+
+    return result;
+}
+
+/**Kata "Grasshopper - Terminal Game #1" on:
+https://www.codewars.com/kata/55e8aba23d399a59500000ce/train/javascript */
+
+class Hero {
+    constructor(name = 'Hero') {
+        this.name = name;
+        this.position = '00';
+        this.health = 100;
+        this.damage = 5;
+        this.experience = 0;
+    };
+};
+
+
