@@ -355,7 +355,13 @@ const SubtractSum = number => {
     }
 }
 
-// debugger
-console.log(SubtractSum(10));
+/**Kata "Sum Mixed Array" on:
+https://www.codewars.com/kata/57eaeb9578748ff92a000009/train/javascript */
 
+const sumMix = array => {
+    array = array.map(number => parseInt(number));
+
+    return array.reduce((acc, number) => acc += number);
+
+}
 
