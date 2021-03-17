@@ -158,9 +158,34 @@ const ballCollector = detritus => {
 /**Kata "Add property to every object in array" on:
 https://www.codewars.com/kata/54e8c3e89e2ae6f4900005a1/train/javascript */
 
-// questions = questions.map(question => question.usersAnswer = null);
-questions = questions.map(({ question, options, rightAns, numAttempts }) => {
-    const newQuestion = {question:question, options:options, rightAns:rightAns, numAttempts:numAttempts, usersAnswer: null};
+// questions = questions.map(({ question, options, rightAns, numAttempts }) => {
+//     const newQuestion = { question: question, options: options, rightAns: rightAns, numAttempts: numAttempts, usersAnswer: null };
 
-    return newQuestion;
-});
+//     return newQuestion;
+// });
+
+/**Kata "Highest and Lowest" on:
+https://www.codewars.com/kata/554b4ac871d6813a03000035/train/javascript */
+
+const highAndLow = numbers => {
+    numbers = numbers.split(" ");
+    numbers = numbers.map(number => parseInt(number));
+    
+    const maxValue = numbers.reduce((acc, number) => {
+        if (number > acc)
+            acc = number;
+
+        return acc;
+    });
+
+    const minValue = numbers.reduce((acc, number) => {
+        if (number < acc)
+            acc = number;
+
+        return acc;
+    });
+
+    return `${maxValue} ${minValue}`;
+
+}
+highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6")

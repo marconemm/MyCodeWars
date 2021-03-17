@@ -242,4 +242,120 @@ const Ball = (ballType) => this.ballType = ballType || "regular";
 /**Kata "You only need one - Beginner" on:
 https://www.codewars.com/kata/57cc975ed542d3148f00015b/train/javascript */
 
-const check = (array, value) => array.includes(value);
+// const check = (array, value) => array.includes(value);
+
+/**Kata "Filling an array (part 1)" on:
+https://www.codewars.com/kata/571d42206414b103dc0006a1/train/javascript */
+
+const arr = maxLength => {
+    const result = [];
+    let length = result.length;
+
+    while (length < (maxLength))
+        length = result.push(length)
+
+    return result;
+}
+
+/**Kata "Grasshopper - Terminal Game #1" on:
+https://www.codewars.com/kata/55e8aba23d399a59500000ce/train/javascript */
+
+class Hero {
+    constructor(name = 'Hero') {
+        this.name = name;
+        this.position = '00';
+        this.health = 100;
+        this.damage = 5;
+        this.experience = 0;
+    };
+};
+
+/**Kata "Grasshoppe" he rooms" on:
+https://www.codewars.com/kata/56a29b237e9e997ff2000048/train/javascript */
+
+class Room {
+    constructor(name = "", description = "", completed = false) {
+        this.name = name;
+        this.description = description;
+        this.completed = completed;
+    }
+}
+
+const rooms = {
+    bedroom: new Room(),
+    kitchen: new Room(),
+    bathroom: new Room(),
+}
+
+/**Kata "Squash the bugs" on:
+https://www.codewars.com/kata/56f173a35b91399a05000cb7/train/javascript */
+
+const findLongest = sentence => {
+
+    const wordsList = sentence.split(" ");
+    let longest = 0;
+
+    for (let i = 0; i < wordsList.length; i++) {
+        const word = wordsList[i];
+
+        if (word.length > longest)
+            longest = word.length;
+    }
+
+    return longest;
+}
+
+/**Kata "Grasshoppe" shing" on:
+https://www.codewars.com/kata/56214b6864fe8813f1000019/train/javascript */
+
+
+let health = 100;
+let position = 0;
+let coins = 0;
+
+const attack = () => "";
+
+const main = () => {
+    rollDice();
+    move();
+    combat();
+    getCoins();
+    buyHealth();
+    printStatus();
+}
+
+/**Kata "Subtract the Sum" on:
+https://www.codewars.com/kata/56c5847f27be2c3db20009c3/train/javascript */
+
+const fruitsLists = ["kiwi", "pear", "kiwi", "banana", "melon", "banana", "melon", "pineapple", "apple", "pineapple", "cucumber", "pineapple", "cucumber", "orange", "grape", "orange", "grape", "apple", "grape", "cherry", "pear", "cherry", "pear", "kiwi", "banana", "kiwi", "apple", "melon", "banana", "melon", "pineapple", "melon", "pineapple", "cucumber", "orange", "apple", "orange", "grape", "orange", "grape", "cherry", "pear", "cherry", "pear", "apple", "pear", "kiwi", "banana", "kiwi", "banana", "melon", "pineapple", "melon", "apple", "cucumber", "pineapple", "cucumber", "orange", "cucumber", "orange", "grape", "cherry", "apple", "cherry", "pear", "cherry", "pear", "kiwi", "pear", "kiwi", "banana", "apple", "banana", "melon", "pineapple", "melon", "pineapple", "cucumber", "pineapple", "cucumber", "apple", "grape", "orange", "grape", "cherry", "grape", "cherry", "pear", "cherry", "apple", "kiwi", "banana", "kiwi", "banana", "melon", "banana", "melon", "pineapple", "apple", "pineapple"];
+
+const SubtractSum = number => {
+
+    let algarismsList = [];
+    let sum = 0;
+    let isFruit = fruitsLists.includes(number - sum);
+    debugger
+    while (!isFruit) {
+
+        algarismsList = number.toString().split("");
+        sum = algarismsList.reduce((acc, algarism) => {
+
+            acc += Number(algarism);
+
+            return acc;
+
+        }, 0);
+
+        isFruit = (number < fruitsLists.length);
+        number -= sum;
+
+        if (isFruit)
+            return fruitsLists[number - 1];
+
+    }
+}
+
+// debugger
+console.log(SubtractSum(10));
+
+
