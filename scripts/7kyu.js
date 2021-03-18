@@ -234,3 +234,36 @@ const whoseBicycle = (diary1, diary2, diary3) => {
 
 }
 
+/**Kata "The Office I - Outed" on:
+https://www.codewars.com/kata/57ecf6efc7fe13eb070000e1/train/javascript */
+
+const outed = (meet, boss) => {
+
+    meet.getHappiness = () => {
+        if (!meet.happiness) {
+
+            meet.happiness = 0;
+            let teamLength = 0;
+
+            for (const person in meet)
+                if (person !== "getHappiness" && person !== "happiness") {
+                    teamLength++;
+                    
+                    if (person === boss)
+                        meet.happiness += (meet[person] * 2);
+                    else
+                        meet.happiness += meet[person];
+                }
+            return meet.happiness / teamLength;
+        }
+    }
+
+    const happiness = meet.getHappiness();
+
+    if (happiness <= 5)
+        return 'Get Out Now!';
+
+    return 'Nice Work Champ!';
+}
+
+console.log(outed({'tim':1, 'jim':3, 'randy':9, 'sandy':6, 'andy':7, 'katie':6, 'laura':9, 'saajid':9, 'alex':9, 'john':9, 'mr':8}, 'katie'));

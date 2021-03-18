@@ -367,8 +367,7 @@ const sumMix = array => {
 /**Kata "Smallest unused ID" on:
 https://www.codewars.com/kata/55eea63119278d571d00006a/train/javascript */
 
-function nextId(idsList) {
-    console.log(idsList);
+const nextId = idsList => {
 
     idsList = idsList.sort((a, b) => a - b);
 
@@ -383,3 +382,12 @@ function nextId(idsList) {
 
     }
 }
+
+/**Kata "Remove String Spaces" on:
+https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/javascript */
+
+const noSpace = str => str.replace(/\s/g,"");
+
+// or...
+
+// const noSpace = str => str.split(" ").join("");
