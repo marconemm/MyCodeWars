@@ -90,27 +90,27 @@ const boredom = team => {
 
     for (let staff in team) {
 
-        if (team[staff] === 'accounts')
+        if (team[staff] === "accounts")
             score++;
-        else if (team[staff] === 'finance')
+        else if (team[staff] === "finance")
             score += 2;
-        else if (team[staff] === 'canteen')
+        else if (team[staff] === "canteen")
             score += 10;
-        else if (team[staff] === 'regulation')
+        else if (team[staff] === "regulation")
             score += 3;
-        else if (team[staff] === 'trading' || team[staff] === 'change')
+        else if (team[staff] === "trading" || team[staff] === "change")
             score += 6;
-        else if (team[staff] === 'IS')
+        else if (team[staff] === "IS")
             score += 8;
-        else if (team[staff] === 'retail')
+        else if (team[staff] === "retail")
             score += 5;
-        else if (team[staff] === 'cleaning')
+        else if (team[staff] === "cleaning")
             score += 4;
-        else if (team[staff] === 'pissing about')
+        else if (team[staff] === "pissing about")
             score += 25;
     }
 
-    return (score <= 80) ? 'kill me now' : (score < 100) ? 'i can handle this' : 'party time!!';
+    return (score <= 80) ? "kill me now" : (score < 100) ? "i can handle this" : "party time!!";
 }
 
 
@@ -170,7 +170,7 @@ https://www.codewars.com/kata/554b4ac871d6813a03000035/train/javascript */
 const highAndLow = numbers => {
     numbers = numbers.split(" ");
     numbers = numbers.map(number => parseInt(number));
-    
+
     const maxValue = numbers.reduce((acc, number) => {
         if (number > acc)
             acc = number;
@@ -192,3 +192,45 @@ highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6")
 
 /**Kata "Whose bicycle?" on:
 https://www.codewars.com/kata/5a2cb4bff28b820c33000082/javascript */
+
+const getSumGrades = diary => {
+
+    let result = 0;
+
+    for (const key in diary)
+        result += diary[key];
+
+    return result;
+}
+
+class Son {
+    constructor(position, age, totalGrade) {
+        this.position = position;
+        this.age = age;
+        this.totalGrade = totalGrade;
+    }
+}
+
+const whoseBicycle = (diary1, diary2, diary3) => {
+
+    const firstSon = new Son("first", 14, getSumGrades(diary1));
+    const secondSon = new Son("second", 9, getSumGrades(diary2));
+    const thirdSon = new Son("third", 8, getSumGrades(diary3));
+
+    const gradesList = [firstSon.totalGrade, secondSon.totalGrade, thirdSon.totalGrade];
+
+    let maxGrade = 0;
+    for (let i = 1; i <= gradesList.length; i++)
+        if (maxGrade < gradesList[i - 1])
+            maxGrade = gradesList[i - 1];
+
+    const str = "I need to buy a bicycle for my ";
+
+    const drawnSonsList = [firstSon, secondSon, thirdSon].filter(son => son.totalGrade === maxGrade);
+    if (drawnSonsList.length > 1)
+        return `${str}${drawnSonsList[drawnSonsList.length - 1].position} son.`; //in a drawn case, always the youngest son will win the bicycle.
+
+    return `${str}${drawnSonsList[0].position} son.`;
+
+}
+
