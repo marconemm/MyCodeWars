@@ -248,7 +248,7 @@ const outed = (meet, boss) => {
             for (const person in meet)
                 if (person !== "getHappiness" && person !== "happiness") {
                     teamLength++;
-                    
+
                     if (person === boss)
                         meet.happiness += (meet[person] * 2);
                     else
@@ -266,4 +266,55 @@ const outed = (meet, boss) => {
     return 'Nice Work Champ!';
 }
 
-console.log(outed({'tim':1, 'jim':3, 'randy':9, 'sandy':6, 'andy':7, 'katie':6, 'laura':9, 'saajid':9, 'alex':9, 'john':9, 'mr':8}, 'katie'));
+/**Kata "Round up to the next multiple of 5" on:
+https://www.codewars.com/kata/55d1d6d5955ec6365400006d/train/javascript */
+
+const roundToNext5 = number => {
+
+    const isMultiple = (number % 5 === 0);
+
+    if (isMultiple)
+        return number;
+
+    return Math.ceil(number / 5) * 5;
+}
+
+/**Kata "You Can't Code Under Pressure #2" on:
+https://www.codewars.com/kata/5546ea9bddfc5c0c38000026/train/javascript */
+
+class Counter {
+    constructor() {
+        this.counter = 0;
+        this.increment = () => this.counter++;
+        this.check = () => this.counter;
+    }
+};
+
+/**Kata "Split The Bill" on:
+https://www.codewars.com/kata/5641275f07335295f10000d0/train/javascript */
+
+const splitTheBill = bill => {
+    console.log(bill);
+    let totalBill = 0;
+    let divideBy = 0;
+
+    for (const amout in bill) {
+        totalBill += bill[amout];
+        divideBy++;
+    }
+
+    const faryShare = totalBill / divideBy;
+
+    debugger
+    for (const person in bill) {
+        if (faryShare % 1 !== 0)
+            bill[person] = Number((bill[person] - faryShare).toFixed(2));
+        else
+            bill[person] = bill[person] - faryShare;
+    }
+
+    return bill
+}
+// splitTheBill({ A: 20, B: 15, C: 10 });
+// splitTheBill({ A: 40, B: 25, C: 10, D: 153, E: 58 });
+

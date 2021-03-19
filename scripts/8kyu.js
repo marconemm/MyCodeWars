@@ -386,8 +386,39 @@ const nextId = idsList => {
 /**Kata "Remove String Spaces" on:
 https://www.codewars.com/kata/57eae20f5500ad98e50002c5/train/javascript */
 
-const noSpace = str => str.replace(/\s/g,"");
+const noSpace = str => str.replace(/\s/g, "");
 
 // or...
 
 // const noSpace = str => str.split(" ").join("");
+
+/**Kata "Check the exam" on:
+https://www.codewars.com/kata/5a3dd29055519e23ec000074/train/javascript */
+
+const checkExam = (correctAnswersList, studantAnswersList) => {
+    const result = studantAnswersList.reduce((acc, studantAnswer, i) => {
+        if (studantAnswer) {
+            if (studantAnswer === correctAnswersList[i])
+                acc += 4;
+            else
+                acc -= 1;
+        }
+
+        return acc;
+    }, 0);
+
+    if (result < 0)
+        return 0;
+
+    return result;
+}
+
+/**Kata "Can we divide it?" on:
+https://www.codewars.com/kata/5a2b703dc5e2845c0900005a/train/javascript */
+
+const isDivideBy = (number, a, b) => {
+    const isDivisibleByA = (number % a === 0);
+    const isDivisibleByB = (number % b === 0);
+
+    return (isDivisibleByA && isDivisibleByB);
+}
