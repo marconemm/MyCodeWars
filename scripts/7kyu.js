@@ -358,3 +358,23 @@ const declareWinner = (fighter1, fighter2, firstAttacker) => {
 
 }
 // declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew");
+
+/**Kata "Largest pair sum in array" on:
+https://www.codewars.com/kata/556196a6091a7e7f58000018/train/javascript */
+
+const largestPairSum = numbers => {
+
+    const maxValue = Math.max(...numbers);
+    numbers.splice(numbers.indexOf(maxValue), 1)
+
+    const secondMaxValue = Math.max(...numbers);
+
+    return maxValue + secondMaxValue;
+}
+//or...
+const largestPairSum = numbers => {
+    numbers.sort((a, b) => b - a );
+    
+    return numbers[0] + numbers[1];
+}
+// largestPairSum([-10, -8, -16, -18, -19])
