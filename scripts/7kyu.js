@@ -372,9 +372,43 @@ const largestPairSum = numbers => {
     return maxValue + secondMaxValue;
 }
 //or...
-const largestPairSum = numbers => {
-    numbers.sort((a, b) => b - a );
-    
-    return numbers[0] + numbers[1];
-}
+// const largestPairSum = numbers => {
+//     numbers.sort((a, b) => b - a);
+
+//     return numbers[0] + numbers[1];
+// }
 // largestPairSum([-10, -8, -16, -18, -19])
+
+/**Kata "What dominates your array?" on:
+https://www.codewars.com/kata/559e10e2e162b69f750000b4/train/javascript */
+
+const dominator = numbersList => {
+
+    let uniqueNumbers = [];
+
+    for (let i = 0; i < numbersList.length; i++) {
+        const item = numbersList[i];
+
+        if (!uniqueNumbers.includes(item)) {
+            uniqueNumbers.push(item);
+        }
+    }
+
+    for (let i = 0; i < uniqueNumbers.length; i++) {
+        const countNow = uniqueNumbers[i];
+        let count = 0
+
+        for (let j = 0; j < numbersList.length; j++) {
+            const item = numbersList[j];
+            if (item === countNow)
+                count++;
+        }
+
+        if (count > Math.floor(numbersList.length / 2))
+            return countNow;
+    }
+
+    return -1;
+}
+// console.log(dominator([3, 4, 3, 2, 3, 1, 3, 3]));
+// console.log(dominator([1, 1, 1, 2, 2, 2]));
