@@ -58,3 +58,25 @@ const solution = number => {
     return multiplesOf3and5List.reduce((acc, multiple) => acc += multiple, 0);
 }
 // console.log(solution(10));
+
+/*Kata "Find the odd int" on:
+ https://www.codewars.com/kata/54da5a58ea159efa38000836/train/javascript */
+
+const findOdd = numbersList => {
+
+    const numbersOccurencies = {}
+
+    for (let i = 0; i < numbersList.length; i++) {
+        const number = numbersList[i];
+        if (!numbersOccurencies[number])
+            numbersOccurencies[number] = 1;
+        else
+            numbersOccurencies[number]++;
+    }
+
+    for (const key in numbersOccurencies)
+        if (numbersOccurencies[key] % 2 !== 0)
+            return parseInt(key);
+}
+
+// console.log(findOdd([ 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 ]));
