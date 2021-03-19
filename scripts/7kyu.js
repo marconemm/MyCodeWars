@@ -318,3 +318,43 @@ const splitTheBill = bill => {
 // splitTheBill({ A: 20, B: 15, C: 10 });
 // splitTheBill({ A: 40, B: 25, C: 10, D: 153, E: 58 });
 
+/**Kata "Two fighters, one winner." on:
+https://www.codewars.com/kata/577bd8d4ae2807c64b00045b/train/javascript */
+
+class Fighter {
+    constructor(name, health, damagePerAttack) {
+        this.name = name;
+        this.health = health;
+        this.damagePerAttack = damagePerAttack;
+        this.toString = () => this.name;
+    }
+}
+
+const declareWinner = (fighter1, fighter2, firstAttacker) => {
+
+    if (fighter1.name === firstAttacker)
+        fighter1.round = true;
+    else
+        fighter2.round = true;
+
+
+    while (fighter1.health > 0 && fighter2.health > 0) {
+
+        if (fighter1.round) {
+            fighter1.round = false;
+            fighter2.round = true;
+            fighter2.health -= fighter1.damagePerAttack;
+        } else {
+            fighter1.round = true;
+            fighter2.round = false;
+            fighter1.health -= fighter2.damagePerAttack;
+        }
+    }
+
+    if (fighter1.health > 0)
+        return fighter1.toString();
+
+    return fighter2.toString();
+
+}
+// declareWinner(new Fighter("Lew", 10, 2), new Fighter("Harry", 5, 4), "Lew");
