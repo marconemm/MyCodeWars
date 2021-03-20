@@ -80,3 +80,32 @@ const findOdd = numbersList => {
 }
 
 // console.log(findOdd([ 20, 1, -1, 2, -2, 3, 3, 5, 5, 1, 2, 4, 20, 4, -1, -2, 5 ]));
+
+/*Kata "Who likes it?" on:
+ https://www.codewars.com/kata/54da5a58ea159efa38000836/train/javascript */
+
+const likes = namesList => {
+    if (namesList.length === 0)
+        return "no one likes this";
+
+    const likeStr = (namesList.length > 1) ? 'like this' : 'likes this';
+    let str = "";
+    if (namesList.length < 4) {
+        for (let i = 0; i < namesList.length; i++) {
+            const name = namesList[i];
+
+            if (i === namesList.length - 1)
+                str += `${name}`;
+            else if (i === namesList.length - 2)
+                str += `${name} and `;
+            else
+                str += `${name}, `;
+        }
+        return `${str} ${likeStr}`
+    }
+    return `${namesList[0]}, ${namesList[1]} and ${namesList.length - 2} others ${likeStr}`
+}
+// console.log(likes(['Peter']));
+// console.log(likes(['Jacob', 'Alex']));
+// console.log(likes(['Alex', 'Jacob', 'Mark', 'Max']));
+
