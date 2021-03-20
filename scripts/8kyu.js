@@ -422,3 +422,11 @@ const isDivideBy = (number, a, b) => {
 
     return (isDivisibleByA && isDivisibleByB);
 }
+
+/**Kata "All Star Code Challenge #18" on:
+https://www.codewars.com/kata/5865918c6b569962950002a1/train/javascript */
+
+const strCount = (str, letter) => {
+    const REGEX = RegExp(`[^${letter}]`, 'g');
+    return str.replace(REGEX, "").length;
+}
