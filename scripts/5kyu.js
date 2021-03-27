@@ -52,3 +52,17 @@ const humanReadable = seconds => {
     }
     return "00:00:00";
 }
+
+/*Kata "Moving Zeros To The End" on:
+ https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/javascript */
+
+const moveZeros = arr => {
+    const zerosList = arr.filter(item => item === 0);
+    const result = arr.filter(item => item !== 0);
+
+    zerosList.forEach(element => result.push(element));
+
+    return result;
+};
+debugger
+console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
