@@ -430,3 +430,5 @@ const strCount = (str, letter) => {
     const REGEX = RegExp(`[^${letter}]`, 'g');
     return str.replace(REGEX, "").length;
 }
+
+
