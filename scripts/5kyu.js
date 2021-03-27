@@ -64,5 +64,30 @@ const moveZeros = arr => {
 
     return result;
 };
-debugger
-console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
+// console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
+
+/*Kata "Valid Parentheses" on:
+ https://www.codewars.com/kata/52774a314c2333f0a7000688/train/javascript */
+
+const validParentheses = parentheses => {
+    parentheses = parentheses.split("()").join("");
+
+    if (parentheses.length === 1
+        || parentheses[0] === ")"
+        || parentheses[parentheses.length - 1] === "(")
+        return false;
+
+    while (parentheses.includes("()")) {
+        const start = parentheses.indexOf("()");
+        parentheses = parentheses.slice(start, (start * -1));
+    }
+
+    if (parentheses.length === 0)
+        return true;
+
+    return false;
+}
+
+// console.log(validParentheses("())"));
+// console.log(validParentheses(")()()()("));
+// console.log(validParentheses("()()()()()()()()()()(())()()()((()"));
