@@ -99,10 +99,7 @@ const getHexadecimal = value => {
     if (value < 1)
         return "00";
 
-    if (value > 255)
-        value = 255;
-
-    if (value === 255)
+    if (value >= 255)
         return "FF";
 
     let integerPart;
@@ -131,3 +128,13 @@ const rgb = (r, g, b) => getHexadecimal(r) + getHexadecimal(g) + getHexadecimal(
 // console.log(rgb(300, 255, 255));
 // console.log(rgb(173, 255, 47));
 // console.log(rgb(8, 11, 248));
+
+/*Kata "Where my anagrams at?" on:
+ https://www.codewars.com/kata/523a86aa4230ebb5420001e1 */
+
+const alphabetize = word => word.toLowerCase().split("").sort().join("");
+
+const anagrams = (word, wordsList) => {
+    word = alphabetize(word)
+    return wordsList.filter(item => word === alphabetize(item));
+}
