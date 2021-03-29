@@ -138,3 +138,55 @@ const anagrams = (word, wordsList) => {
     word = alphabetize(word)
     return wordsList.filter(item => word === alphabetize(item));
 }
+
+/*Kata "Rot13" on:
+ https://www.codewars.com/kata/530e15517bc88ac656000716 */
+
+const rot13 = message => {
+    //                 0    1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17   18   19   20   21   22   23   24   25
+    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    const alphabetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    message = message.split(" ");
+
+    for (let i = 0; i < message.length; i++) {
+
+        const word = message[i];
+        let wordRot13 = "";
+
+        for (let j = 0; j < word.length; j++) {
+
+            const character = word[j];
+            const isLetter = (alphabet.includes(character.toLowerCase()));
+
+            if (isLetter) {
+
+                const isUpperCase = ((character.charCodeAt() >= 65) && (character.charCodeAt() <= 90));
+                let index;
+
+                if (isUpperCase)
+                    index = alphabetUpper.indexOf(character);
+                else
+                    index = alphabet.indexOf(character);
+
+                if ((index + 13) >= alphabet.length)
+                    if (isUpperCase)
+                        wordRot13 += alphabetUpper[(index + 13) - 26];
+                    else
+                        wordRot13 += alphabet[(index + 13) - 26];
+                else if (isUpperCase)
+                    wordRot13 += alphabetUpper[(index + 13)];
+                else
+                    wordRot13 += alphabet[(index + 13)];
+            }
+            else
+                wordRot13 += character;
+        }
+        message.splice(i, 1, wordRot13);
+    }
+
+    return message.join(" ");
+}
+console.log(rot13("test"));
+console.log(rot13("Test"));
+console.log(rot13("Ruby is cool!"));
+console.log(rot13("abcdefghijklmnopqrstuvwxyz"));
